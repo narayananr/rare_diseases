@@ -4,6 +4,48 @@ Datasets linking rare diseases to their associated genes, extracted from [Orphad
 
 **Download the data:** https://narayananr.github.io/rare_diseases/
 
+---
+
+## Getting Started (For Students)
+
+### Option 1: Use Google Colab (Easiest - No Installation!)
+
+1. Click this link: **[Open in Google Colab](https://colab.research.google.com/github/narayananr/rare_diseases/blob/main/notebooks/learn_data_analysis.ipynb)**
+2. Sign in with your Google account
+3. Click "Copy to Drive" to save your own copy
+4. Start learning!
+
+### Option 2: Download as ZIP (No Git Required)
+
+1. Click the green **"Code"** button at the top of this page
+2. Click **"Download ZIP"**
+3. Extract the ZIP file to a folder on your computer
+4. Open the `notebooks/learn_data_analysis.ipynb` file with Jupyter
+
+### Option 3: Clone with Git
+
+If you have Git installed, open Terminal (Mac/Linux) or Command Prompt (Windows) and run:
+
+```bash
+git clone https://github.com/narayananr/rare_diseases.git
+cd rare_diseases
+```
+
+### Running the Notebook Locally
+
+After downloading, you need Jupyter to run the notebook:
+
+```bash
+# Install Jupyter (if you don't have it)
+pip install jupyter pandas matplotlib
+
+# Open the notebook
+cd rare_diseases
+jupyter notebook notebooks/learn_data_analysis.ipynb
+```
+
+---
+
 ## Project Structure
 
 ```
