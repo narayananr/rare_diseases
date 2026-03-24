@@ -86,6 +86,14 @@ Maps rare diseases to their associated genes.
 | `gene` | Gene symbol (e.g., BRCA1) |
 | `gene_name` | Full gene name |
 
+**Sample data:**
+
+| disease | gene | gene_name |
+|---------|------|-----------|
+| Multiple epiphyseal dysplasia-macrocephaly-facial dysmorphism syndrome | KIF7 | kinesin family member 7 |
+| Brachydactyly-short stature-retinitis pigmentosa syndrome | CWC27 | CWC27 spliceosome associated cyclophilin |
+| Aspartylglucosaminuria | AGA | aspartylglucosaminidase |
+
 **Stats:** 4,128 diseases, 4,552 genes, 8,374 associations
 
 ### Ensembl Gene Annotations (`data/ensembl_genes.csv`)
@@ -101,6 +109,14 @@ Basic annotations for all human genes.
 | `strand` | DNA strand (1 or -1) |
 | `biotype` | Gene type (protein_coding, lncRNA, etc.) |
 | `description` | Gene description |
+
+**Sample data:**
+
+| ensembl_gene_id | gene_name | chromosome | start | end | strand | biotype |
+|-----------------|-----------|------------|-------|-----|--------|---------|
+| ENSG00000210049 | MT-TF | MT | 577 | 647 | 1 | Mt_tRNA |
+| ENSG00000211459 | MT-RNR1 | MT | 648 | 1601 | 1 | Mt_rRNA |
+| ENSG00000210077 | MT-TV | MT | 1602 | 1670 | 1 | Mt_tRNA |
 
 **Stats:** 78,691 human genes
 
