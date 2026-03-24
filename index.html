@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rare Disease Gene Dataset</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1 { color: #2c3e50; }
+        .stats {
+            display: flex;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .stat {
+            background: #f8f9fa;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #3498db;
+        }
+        .stat-label { color: #666; }
+        a.download {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+        a.download:hover { background: #2980b9; }
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+        }
+        footer {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rare Disease Gene Dataset</h1>
+
+    <p>A curated dataset mapping rare diseases to their associated genes, extracted from <a href="https://www.orphadata.com/">Orphadata</a>.</p>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">4,023</div>
+            <div class="stat-label">Rare Diseases</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">4,641</div>
+            <div class="stat-label">Genes</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">8,374</div>
+            <div class="stat-label">Associations</div>
+        </div>
+    </div>
+
+    <h2>Download</h2>
+    <a href="data/rare_gene_disease_dataset.csv" class="download">Rare Disease Genes (CSV)</a>
+    <a href="data/ensembl_genes.csv" class="download">Ensembl Gene Annotations (CSV)</a>
+
+    <h2>Learn Data Analysis</h2>
+    <p>New to Python? Try our <a href="https://github.com/narayananr/rare_diseases/blob/main/notebooks/learn_data_analysis.ipynb">interactive Jupyter notebook</a> to learn data analysis with this dataset!</p>
+
+    <h2>Data Format</h2>
+    <h3>Rare Disease Genes</h3>
+    <p>Maps rare diseases to their associated genes (8,374 associations):</p>
+    <ul>
+        <li><code>disease</code> - Name of the rare disease</li>
+        <li><code>gene</code> - Gene symbol</li>
+        <li><code>gene_name</code> - Full gene name</li>
+    </ul>
+
+    <h3>Ensembl Gene Annotations</h3>
+    <p>Basic annotations for 78,691 human genes:</p>
+    <ul>
+        <li><code>ensembl_gene_id</code> - Unique Ensembl identifier</li>
+        <li><code>gene_name</code> - Gene symbol</li>
+        <li><code>chromosome</code> - Chromosome location (1-22, X, Y, MT)</li>
+        <li><code>start</code> / <code>end</code> - Genomic coordinates</li>
+        <li><code>strand</code> - DNA strand (1 or -1)</li>
+        <li><code>biotype</code> - Gene type (protein_coding, etc.)</li>
+        <li><code>description</code> - Gene description</li>
+    </ul>
+
+    <h2>Sources</h2>
+    <ul>
+        <li><strong>Rare Disease Genes:</strong> <a href="https://www.orphadata.com/genes/">Orphadata Product 6</a> - Orphanet's open-access rare disease database</li>
+        <li><strong>Gene Annotations:</strong> <a href="https://www.ensembl.org/">Ensembl BioMart</a> - Human genome annotations</li>
+    </ul>
+
+    <footer>
+        <p>View source on <a href="https://github.com/narayananr/rare_diseases">GitHub</a></p>
+    </footer>
+</body>
+</html>

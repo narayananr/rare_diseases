@@ -1,0 +1,135 @@
+# Rare Disease Gene Dataset
+
+Datasets linking rare diseases to their associated genes, extracted from [Orphadata](https://www.orphadata.com/) and [Ensembl](https://www.ensembl.org/).
+
+**Download the data:** https://narayananr.github.io/rare_diseases/
+
+## Project Structure
+
+```
+rare_diseases/
+├── data/                           # Datasets
+│   ├── rare_gene_disease_dataset.csv
+│   └── ensembl_genes.csv
+├── scripts/                        # Python scripts to generate data
+│   ├── fetch_rare_disease_genes.py
+│   └── fetch_ensembl_genes.py
+├── notebooks/                      # Learning materials
+│   └── learn_data_analysis.ipynb
+├── index.html                      # GitHub Pages website
+└── README.md
+```
+
+## Learn Data Analysis
+
+**New to Python?** Try our interactive Jupyter notebook!
+
+📓 **[Learn Data Analysis with Rare Disease Genes](notebooks/learn_data_analysis.ipynb)**
+
+You'll learn:
+- Loading and exploring CSV files with pandas
+- Filtering and summarizing data
+- Creating visualizations
+- Merging two datasets together
+
+## Datasets
+
+### Rare Disease Genes (`data/rare_gene_disease_dataset.csv`)
+
+Maps rare diseases to their associated genes.
+
+| Column | Description |
+|--------|-------------|
+| `disease` | Name of the rare disease |
+| `gene` | Gene symbol (e.g., BRCA1) |
+| `gene_name` | Full gene name |
+
+**Stats:** 4,128 diseases, 4,552 genes, 8,374 associations
+
+### Ensembl Gene Annotations (`data/ensembl_genes.csv`)
+
+Basic annotations for all human genes.
+
+| Column | Description |
+|--------|-------------|
+| `ensembl_gene_id` | Unique Ensembl identifier (e.g., ENSG00000141510) |
+| `gene_name` | Gene symbol |
+| `chromosome` | Chromosome (1-22, X, Y, MT) |
+| `start` / `end` | Genomic coordinates (bp) |
+| `strand` | DNA strand (1 or -1) |
+| `biotype` | Gene type (protein_coding, lncRNA, etc.) |
+| `description` | Gene description |
+
+**Stats:** 78,691 human genes
+
+## Usage
+
+### Quick Start
+
+Download the CSV files directly from the [GitHub Pages site](https://narayananr.github.io/rare_diseases/).
+
+### Regenerate Data
+
+To regenerate the datasets from source:
+
+```bash
+# 1. Download Orphadata XML (required for rare disease genes)
+# Get en_product6.xml from: https://www.orphadata.com/genes/
+
+# 2. Generate rare disease gene associations
+python scripts/fetch_rare_disease_genes.py
+
+# 3. Generate Ensembl gene annotations
+python scripts/fetch_ensembl_genes.py
+```
+
+**Requirements:** Python 3 with `requests` library
+
+```bash
+pip install requests
+```
+
+## Data Sources
+
+- **Orphadata Product 6**: Genes associated with rare diseases
+  - https://www.orphadata.com/genes/
+  - Orphanet is the reference portal for rare diseases
+
+- **Ensembl BioMart**: Human genome annotations
+  - https://www.ensembl.org/biomart/
+  - Comprehensive genome database
+
+## Example: Find genes for a disease
+
+```python
+import pandas as pd
+
+df = pd.read_csv('data/rare_gene_disease_dataset.csv')
+
+# Find genes associated with cystic fibrosis
+cf_genes = df[df['disease'].str.contains('Cystic fibrosis', case=False)]
+print(cf_genes)
+```
+
+## Example: Get gene details
+
+```python
+import pandas as pd
+
+diseases = pd.read_csv('data/rare_gene_disease_dataset.csv')
+genes = pd.read_csv('data/ensembl_genes.csv')
+
+# Merge to get full gene details for rare disease genes
+merged = diseases.merge(genes, left_on='gene', right_on='gene_name', how='left')
+print(merged[['disease', 'gene', 'chromosome', 'biotype']].head())
+```
+
+## License
+
+The datasets are derived from:
+- Orphadata: Available under [Creative Commons Attribution 4.0](https://www.orphadata.com/terms-of-use/)
+- Ensembl: Available under open access terms
+
+## Contributing
+
+Issues and pull requests welcome at https://github.com/narayananr/rare_diseases
