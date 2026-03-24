@@ -169,6 +169,18 @@ cf_genes = df[df['disease'].str.contains('Cystic fibrosis', case=False)]
 print(cf_genes)
 ```
 
+Output:
+```
+            disease      gene                                gene_name
+41  Cystic fibrosis  SERPINA1                 serpin family A member 1
+42  Cystic fibrosis   SLC26A9        solute carrier family 26 member 9
+43  Cystic fibrosis   SLC6A14        solute carrier family 6 member 14
+44  Cystic fibrosis    SLC9A3        solute carrier family 9 member A3
+45  Cystic fibrosis      CFTR   CF transmembrane conductance regulator
+...
+(19 genes total)
+```
+
 ## Example: Get gene details
 
 ```python
@@ -180,6 +192,16 @@ genes = pd.read_csv('data/ensembl_genes.csv')
 # Merge to get full gene details for rare disease genes
 merged = diseases.merge(genes, left_on='gene', right_on='gene_name', how='left')
 print(merged[['disease', 'gene', 'chromosome', 'biotype']].head())
+```
+
+Output:
+```
+                                                                  disease   gene chromosome         biotype
+0  Multiple epiphyseal dysplasia-macrocephaly-facial dysmorphism syndrome   KIF7         15  protein_coding
+1               Brachydactyly-short stature-retinitis pigmentosa syndrome  CWC27          5  protein_coding
+2                                                  Aspartylglucosaminuria    AGA          4  protein_coding
+3                                           Multiple sulfatase deficiency  SUMF1          3  protein_coding
+4                                                       Beta-mannosidosis  MANBA          4  protein_coding
 ```
 
 ## License
