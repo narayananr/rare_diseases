@@ -6,7 +6,7 @@ Datasets linking rare diseases to their associated genes, extracted from [Orphad
 
 ---
 
-## Getting Started (For Students)
+## Getting Started
 
 ### Option 1: Use Google Colab (Easiest - No Installation!)
 
