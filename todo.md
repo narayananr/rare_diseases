@@ -81,7 +81,7 @@ Each student creates and maintains their own GitHub repo as a portfolio containi
   - Push local repo: `cd ~/Projects/rare-disease-portfolio-example && git remote add origin git@github.com:narayananr/rare-disease-genomics.git && git push -u origin main`
   - Go to repo Settings → check "Template repository"
   - Share link with students — they click "Use this template", name it `rare-disease-genomics`, clone and replace content with their own
-- [ ] Update HW2 notebook to use template workflow instead of create-from-scratch
+- [ ] Update HW2 notebook to use template workflow instead of create-from-scratch ⚠️ DO NOT do this until template repo is live on GitHub and tested
 - [ ] Guide: basic git workflow cheat sheet for students
 - [ ] Guide: how to write a results/report section in a notebook
 - [ ] Future project: integrate GTEx gene expression data
