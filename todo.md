@@ -8,15 +8,21 @@ Educational project providing datasets linking rare diseases to their associated
 
 ```
 rare_diseases/
-├── data/                           # Datasets
+├── data/                               # Datasets
 │   ├── rare_gene_disease_dataset.csv
 │   └── ensembl_genes.csv
-├── scripts/                        # Data generation scripts
+├── scripts/                            # Data generation scripts
 │   ├── fetch_rare_disease_genes.py
 │   └── fetch_ensembl_genes.py
-├── notebooks/                      # Learning materials
-│   └── learn_data_analysis.ipynb
-├── index.html                      # GitHub Pages website
+├── notebooks/                          # Course notebooks
+│   ├── Rare_Disease_Genes_Class_1.ipynb   # Class 1 (Mar 27)
+│   ├── Rare_Disease_Genes_HW1.ipynb       # Homework 1 (due Apr 3)
+│   ├── Rare_Disease_Genes_Class_2.ipynb   # Class 2 (Apr 3)
+│   ├── Rare_Disease_Genes_HW2.ipynb       # Homework 2 (due Apr 10) — portfolio setup
+│   └── learn_data_analysis.ipynb          # Original combined notebook
+├── .claude/agents/
+│   └── notebook-reviewer.md           # Claude agent for reviewing notebooks
+├── index.html                          # GitHub Pages website
 └── README.md
 ```
 
@@ -28,6 +34,10 @@ rare_diseases/
 - [x] Write Python scripts with educational comments
 - [x] Create interactive Jupyter notebook for learning
 - [x] Organize project into clear directory structure
+- [x] Split notebook into Class 1, HW1, and Class 2
+- [x] Add step-by-step visualization section to HW1
+- [x] Review and fix all notebooks for student clarity and code correctness
+- [x] Add course schedule with Colab links to README
 
 ## Data Sources
 
@@ -37,6 +47,29 @@ rare_diseases/
 ## Live Site
 
 https://narayananr.github.io/rare_diseases/
+
+---
+
+## Upcoming
+
+- [ ] Class 2 — April 3, 2026 (Rare_Disease_Genes_Class_2.ipynb)
+- [ ] Assign HW2 in Class 2 — due April 10, 2026
+- [ ] Collect HW1 submissions
+
+## Future Goal: Student Portfolio on GitHub
+
+Each student creates and maintains their own GitHub repo as a portfolio containing:
+- Code (notebooks, scripts)
+- Analysis (findings, explorations)
+- Results (charts, outputs)
+- Report (written summary)
+
+### What needs to be built
+- [x] HW2 notebook — step-by-step guide to creating a GitHub portfolio repo (Apr 3)
+- [ ] Example portfolio repo students can fork as a starting point
+- [ ] Guide: basic git workflow cheat sheet for students
+- [ ] Assignment: structured prompts that produce portfolio-worthy outputs
+- [ ] Guide: how to write a results/report section in a notebook
 
 ---
 
