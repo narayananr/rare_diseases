@@ -64,12 +64,27 @@ Each student creates and maintains their own GitHub repo as a portfolio containi
 - Results (charts, outputs)
 - Report (written summary)
 
+### Portfolio Repo Name Decision
+- Repo name: `rare-disease-genomics`
+- README title: *"Computational Analysis of Tissue Specificity of Rare Disease Genes"*
+- Scientific question: where in the body do rare disease genes act?
+- Future: integrate GTEx gene expression data to map rare disease genes to tissue-specific expression patterns
+
 ### What needs to be built
 - [x] HW2 notebook — step-by-step guide to creating a GitHub portfolio repo (Apr 3)
-- [ ] Example portfolio repo students can fork as a starting point
+- [x] Example portfolio repo created locally at `~/Projects/rare-disease-portfolio-example`
+  - README with full scientific title and project roadmap
+  - Completed HW1 notebook (epilepsy keyword analysis)
+  - results/findings.md with example written report
+- [ ] Push example portfolio to GitHub as `rare-disease-genomics` and mark as template repo
+  - Create repo on GitHub: github.com/narayananr/rare-disease-genomics
+  - Push local repo: `cd ~/Projects/rare-disease-portfolio-example && git remote add origin git@github.com:narayananr/rare-disease-genomics.git && git push -u origin main`
+  - Go to repo Settings → check "Template repository"
+  - Share link with students — they click "Use this template", name it `rare-disease-genomics`, clone and replace content with their own
+- [ ] Update HW2 notebook to use template workflow instead of create-from-scratch
 - [ ] Guide: basic git workflow cheat sheet for students
-- [ ] Assignment: structured prompts that produce portfolio-worthy outputs
 - [ ] Guide: how to write a results/report section in a notebook
+- [ ] Future project: integrate GTEx gene expression data
 
 ---
 
