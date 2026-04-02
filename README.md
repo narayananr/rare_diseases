@@ -6,6 +6,16 @@ Datasets linking rare diseases to their associated genes, extracted from [Orphad
 
 ---
 
+## Course Schedule
+
+| Date | Session | Notebook | Open in Colab |
+|------|---------|---------|---------------|
+| Mar 27, 2026 | Class 1 | [Rare_Disease_Genes_Class_1.ipynb](notebooks/Rare_Disease_Genes_Class_1.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/narayananr/rare_diseases/blob/main/notebooks/Rare_Disease_Genes_Class_1.ipynb) |
+| Mar 27 – Apr 3 | Homework 1 | [Rare_Disease_Genes_HW1.ipynb](notebooks/Rare_Disease_Genes_HW1.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/narayananr/rare_diseases/blob/main/notebooks/Rare_Disease_Genes_HW1.ipynb) |
+| Apr 3, 2026 | Class 2 | [Rare_Disease_Genes_Class_2.ipynb](notebooks/Rare_Disease_Genes_Class_2.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/narayananr/rare_diseases/blob/main/notebooks/Rare_Disease_Genes_Class_2.ipynb) |
+
+---
+
 ## Getting Started
 
 ### Option 1: Use Google Colab (Easiest - No Installation!)
@@ -50,15 +60,18 @@ jupyter notebook notebooks/learn_data_analysis.ipynb
 
 ```
 rare_diseases/
-├── data/                           # Datasets
+├── data/                               # Datasets
 │   ├── rare_gene_disease_dataset.csv
 │   └── ensembl_genes.csv
-├── scripts/                        # Python scripts to generate data
+├── scripts/                            # Python scripts to generate data
 │   ├── fetch_rare_disease_genes.py
 │   └── fetch_ensembl_genes.py
-├── notebooks/                      # Learning materials
-│   └── learn_data_analysis.ipynb
-├── index.html                      # GitHub Pages website
+├── notebooks/                          # Course notebooks
+│   ├── Rare_Disease_Genes_Class_1.ipynb   # Class 1 (Mar 27)
+│   ├── Rare_Disease_Genes_HW1.ipynb       # Homework 1 (due Apr 3)
+│   ├── Rare_Disease_Genes_Class_2.ipynb   # Class 2 (Apr 3)
+│   └── learn_data_analysis.ipynb          # Original combined notebook
+├── index.html                          # GitHub Pages website
 └── README.md
 ```
 
