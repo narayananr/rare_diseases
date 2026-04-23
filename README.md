@@ -14,6 +14,7 @@ Datasets linking rare diseases to their associated genes, extracted from [Orphad
 | Mar 27 – Apr 3 | Homework 1 | [Rare_Disease_Genes_HW1.ipynb](notebooks/Rare_Disease_Genes_HW1.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/narayananr/rare_diseases/blob/main/notebooks/Rare_Disease_Genes_HW1.ipynb) |
 | Apr 3, 2026 | Class 2 | [Rare_Disease_Genes_Class_2.ipynb](notebooks/Rare_Disease_Genes_Class_2.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/narayananr/rare_diseases/blob/main/notebooks/Rare_Disease_Genes_Class_2.ipynb) |
 | Apr 3 – Apr 10 | Homework 2 | [Rare_Disease_Genes_HW2.ipynb](notebooks/Rare_Disease_Genes_HW2.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/narayananr/rare_diseases/blob/main/notebooks/Rare_Disease_Genes_HW2.ipynb) |
+| Apr 10 – Apr 24 | Homework 3 | [Rare_Disease_Genes_HW3.ipynb](notebooks/Rare_Disease_Genes_HW3.ipynb) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/narayananr/rare_diseases/blob/main/notebooks/Rare_Disease_Genes_HW3.ipynb) |
 
 ---
 
@@ -72,6 +73,7 @@ rare_diseases/
 │   ├── Rare_Disease_Genes_HW1.ipynb       # Homework 1 (due Apr 3)
 │   ├── Rare_Disease_Genes_Class_2.ipynb   # Class 2 (Apr 3)
 │   ├── Rare_Disease_Genes_HW2.ipynb       # Homework 2 (due Apr 10) — portfolio setup
+│   ├── Rare_Disease_Genes_HW3.ipynb       # Homework 3 (due Apr 24) — visualization
 │   └── learn_data_analysis.ipynb          # Original combined notebook
 ├── index.html                          # GitHub Pages website
 └── README.md

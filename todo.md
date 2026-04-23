@@ -56,6 +56,32 @@ https://narayananr.github.io/rare_diseases/
 - [ ] Assign HW2 in Class 2 — due April 10, 2026
 - [ ] Collect HW1 submissions
 
+---
+
+## Plan: HW3 — Visualization with Merged Datasets
+
+**Goal:** Create `Rare_Disease_Genes_HW3.ipynb` — a visualization-focused homework using the merged rare disease + ensembl datasets. Students apply their merge skills from Class 2 and learn new chart types.
+
+### Exercises
+
+- [ ] **Setup cell** — Load both CSVs, merge them (quick recap, code provided)
+- [ ] **Exercise 1: Rare Disease Genes by Chromosome** — Bar chart showing which chromosomes have the most rare disease genes (sorted chromosome order). Students adapt the template.
+- [ ] **Exercise 2: Pie Chart — Gene Biotypes** — Introduce pie charts. Show biotype breakdown of rare disease genes vs all genes. Students create their own pie chart.
+- [ ] **Exercise 3: Gene Length Comparison** — Calculate gene length (`end - start`). Compare average length of rare disease genes vs all genes using a grouped bar chart. New concept: grouped bars.
+- [ ] **Exercise 4: Scatter Plot — Genes vs Disease Genes** — Introduce scatter plots. Plot total genes per chromosome vs rare disease genes per chromosome. Students interpret the correlation.
+- [ ] **Exercise 5: Disease Category Chromosome Hotspots** — Pick a disease keyword, filter merged data, chart which chromosomes have the most genes for that category. Student choice of keyword.
+- [ ] **Exercise 6: Student Investigation** — Open-ended: pick a question, analyze, visualize, write summary.
+- [ ] **Extension: Stacked Bar Chart** — Optional challenge: stacked bar showing multiple disease categories across chromosomes.
+
+### Style
+- Same scaffolded format as HW1 (templates, hints, keyword tables)
+- Step-by-step chart tutorials for new chart types (pie, scatter)
+- Written reflection questions after each visualization
+- Quick reference table for new chart functions
+
+### Files to create
+- [ ] `notebooks/Rare_Disease_Genes_HW3.ipynb`
+
 ## Future Goal: Student Portfolio on GitHub
 
 Each student creates and maintains their own GitHub repo as a portfolio containing:
