@@ -100,13 +100,13 @@ Maps rare diseases to their associated genes.
 | Column | Description |
 |--------|-------------|
 | `disease` | Name of the rare disease |
-| `gene` | Gene symbol (e.g., BRCA1) |
-| `gene_name` | Full gene name |
+| `gene_symbol` | Gene symbol (e.g., BRCA1) |
+| `gene_full_name` | Full gene name |
 
 **Sample data:**
 
-| disease | gene | gene_name |
-|---------|------|-----------|
+| disease | gene_symbol | gene_full_name |
+|---------|-------------|----------------|
 | Multiple epiphyseal dysplasia-macrocephaly-facial dysmorphism syndrome | KIF7 | kinesin family member 7 |
 | Brachydactyly-short stature-retinitis pigmentosa syndrome | CWC27 | CWC27 spliceosome associated cyclophilin |
 | Aspartylglucosaminuria | AGA | aspartylglucosaminidase |
@@ -120,7 +120,7 @@ Basic annotations for all human genes.
 | Column | Description |
 |--------|-------------|
 | `ensembl_gene_id` | Unique Ensembl identifier (e.g., ENSG00000141510) |
-| `gene_name` | Gene symbol |
+| `gene_symbol` | Gene symbol |
 | `chromosome` | Chromosome (1-22, X, Y, MT) |
 | `start` / `end` | Genomic coordinates (bp) |
 | `strand` | DNA strand (1 or -1) |
@@ -129,8 +129,8 @@ Basic annotations for all human genes.
 
 **Sample data:**
 
-| ensembl_gene_id | gene_name | chromosome | start | end | strand | biotype |
-|-----------------|-----------|------------|-------|-----|--------|---------|
+| ensembl_gene_id | gene_symbol | chromosome | start | end | strand | biotype |
+|-----------------|-------------|------------|-------|-----|--------|---------|
 | ENSG00000210049 | MT-TF | MT | 577 | 647 | 1 | Mt_tRNA |
 | ENSG00000211459 | MT-RNR1 | MT | 648 | 1601 | 1 | Mt_rRNA |
 | ENSG00000210077 | MT-TV | MT | 1602 | 1670 | 1 | Mt_tRNA |
@@ -182,18 +182,18 @@ import pandas as pd
 df = pd.read_csv('data/rare_gene_disease_dataset.csv')
 
 # Find genes associated with cystic fibrosis
-cf_genes = df[df['disease'].str.contains('Cystic fibrosis', case=False)]
+cf_genes = df[df['disease'].str.contains('cystic fibrosis', case=False)]
 print(cf_genes)
 ```
 
 Output:
 ```
-            disease      gene                                gene_name
-41  Cystic fibrosis  SERPINA1                 serpin family A member 1
-42  Cystic fibrosis   SLC26A9        solute carrier family 26 member 9
-43  Cystic fibrosis   SLC6A14        solute carrier family 6 member 14
-44  Cystic fibrosis    SLC9A3        solute carrier family 9 member A3
-45  Cystic fibrosis      CFTR   CF transmembrane conductance regulator
+            disease gene_symbol                         gene_full_name
+41  Cystic fibrosis    SERPINA1                 serpin family A member 1
+42  Cystic fibrosis     SLC26A9        solute carrier family 26 member 9
+43  Cystic fibrosis     SLC6A14        solute carrier family 6 member 14
+44  Cystic fibrosis      SLC9A3        solute carrier family 9 member A3
+45  Cystic fibrosis        CFTR   CF transmembrane conductance regulator
 ...
 (19 genes total)
 ```
@@ -207,18 +207,18 @@ diseases = pd.read_csv('data/rare_gene_disease_dataset.csv')
 genes = pd.read_csv('data/ensembl_genes.csv')
 
 # Merge to get full gene details for rare disease genes
-merged = diseases.merge(genes, left_on='gene', right_on='gene_name', how='left')
-print(merged[['disease', 'gene', 'chromosome', 'biotype']].head())
+merged = diseases.merge(genes, on='gene_symbol', how='left')
+print(merged[['disease', 'gene_symbol', 'chromosome', 'biotype']].head())
 ```
 
 Output:
 ```
-                                                                  disease   gene chromosome         biotype
-0  Multiple epiphyseal dysplasia-macrocephaly-facial dysmorphism syndrome   KIF7         15  protein_coding
-1               Brachydactyly-short stature-retinitis pigmentosa syndrome  CWC27          5  protein_coding
-2                                                  Aspartylglucosaminuria    AGA          4  protein_coding
-3                                           Multiple sulfatase deficiency  SUMF1          3  protein_coding
-4                                                       Beta-mannosidosis  MANBA          4  protein_coding
+                                                                  disease gene_symbol chromosome         biotype
+0  Multiple epiphyseal dysplasia-macrocephaly-facial dysmorphism syndrome        KIF7         15  protein_coding
+1               Brachydactyly-short stature-retinitis pigmentosa syndrome       CWC27          5  protein_coding
+2                                                  Aspartylglucosaminuria         AGA          4  protein_coding
+3                                           Multiple sulfatase deficiency       SUMF1          3  protein_coding
+4                                                       Beta-mannosidosis       MANBA          4  protein_coding
 ```
 
 ## License

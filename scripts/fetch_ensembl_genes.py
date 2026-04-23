@@ -122,7 +122,7 @@ def parse_and_save(data, output_file=OUTPUT_FILE):
     # Rename the headers to be simpler and cleaner
     header_map = {
         "Gene stable ID": "ensembl_gene_id",
-        "Gene name": "gene_name",
+        "Gene name": "gene_symbol",
         "Chromosome/scaffold name": "chromosome",
         "Gene start (bp)": "start",      # bp = base pairs (units of DNA)
         "Gene end (bp)": "end",

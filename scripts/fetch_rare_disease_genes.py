@@ -114,8 +114,8 @@ def parse_xml(filepath):
             if disease_name and gene_symbol:
                 results.append({
                     "disease": disease_name,
-                    "gene": gene_symbol,
-                    "gene_name": gene_name
+                    "gene_symbol": gene_symbol,
+                    "gene_full_name": gene_name
                 })
 
     return results
@@ -128,7 +128,7 @@ def save_csv(data, filepath):
     print(f"Saving to {filepath}...")
 
     with open(filepath, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=["disease", "gene", "gene_name"])
+        writer = csv.DictWriter(f, fieldnames=["disease", "gene_symbol", "gene_full_name"])
         writer.writeheader()
         writer.writerows(data)
 
@@ -154,7 +154,7 @@ if __name__ == "__main__":
 
     # Print summary
     unique_diseases = len(set(row["disease"] for row in data))
-    unique_genes = len(set(row["gene"] for row in data))
+    unique_genes = len(set(row["gene_symbol"] for row in data))
 
     print(f"\n--- Summary ---")
     print(f"Date: {datetime.now().strftime('%Y-%m-%d')}")
