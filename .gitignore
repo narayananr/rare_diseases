@@ -16,3 +16,7 @@
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+
+# Work-in-progress slide decks (not ready for public)
+slides/pca_lesson.html
+slides/gene_expression_intro.html
