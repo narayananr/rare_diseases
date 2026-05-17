@@ -18,7 +18,7 @@ Datasets linking rare diseases to their associated genes, extracted from [Orphad
 
 ---
 
-## Bonus Lesson — Finding Tissue-Specific Genes
+## Next Lesson — Finding Tissue-Specific Genes
 
 A standalone lesson bridging gene-expression intuition with computational scoring. Designed for high-school audiences.
 
@@ -89,10 +89,10 @@ rare_diseases/
 │   ├── Rare_Disease_Genes_Class_2.ipynb     # Class 2 (Apr 3)
 │   ├── Rare_Disease_Genes_HW2.ipynb         # Homework 2 (due Apr 10) — portfolio setup
 │   ├── Rare_Disease_Genes_HW3.ipynb         # Homework 3 (due Apr 24) — visualization
-│   ├── Tissue_Specificity_Examples.ipynb    # Bonus: tissue-specificity scoring
+│   ├── Tissue_Specificity_Examples.ipynb    # Next lesson: tissue-specificity scoring
 │   └── learn_data_analysis.ipynb            # Original combined notebook
 ├── slides/                             # HTML slide decks (reveal.js)
-│   └── find_tissue_specific_genes.html      # Bonus lesson slides
+│   └── find_tissue_specific_genes.html      # Next lesson slides
 ├── index.html                          # GitHub Pages website
 └── README.md
 ```
