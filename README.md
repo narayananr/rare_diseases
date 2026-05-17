@@ -18,6 +18,21 @@ Datasets linking rare diseases to their associated genes, extracted from [Orphad
 
 ---
 
+## Bonus Lesson — Finding Tissue-Specific Genes
+
+A standalone lesson bridging gene-expression intuition with computational scoring. Designed for high-school audiences.
+
+| Resource | Description | Open |
+|----------|-------------|------|
+| 🎞 [Slides](slides/find_tissue_specific_genes.html) | 21-slide deck: same DNA → expression → GTEx → tissue specificity in rare-disease genes (MYH7, DMD, INS, HBB) → ends with *"how do we find them computationally?"* + practice datasets + a *"describe the steps"* exercise. | [View on GitHub Pages](https://narayananr.github.io/rare_diseases/slides/find_tissue_specific_genes.html) |
+| 📓 [Tissue_Specificity_Examples.ipynb](notebooks/Tissue_Specificity_Examples.ipynb) | Step-by-step Python notebook: compute **fold change**, **ratio-to-mean**, and **tau (τ)** scores on toy MYH7/GAPDH data, then apply to a small gene library. | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/narayananr/rare_diseases/blob/main/notebooks/Tissue_Specificity_Examples.ipynb) |
+
+The slides open the inquiry (*do rare-disease genes show tissue specificity in normal bodies?*) and motivate the need for a computational score. The notebook is the natural follow-up, walking through three scoring methods on data small enough to verify by hand.
+
+> Slides use [reveal.js](https://revealjs.com/) — arrow keys to navigate, **S** for speaker notes, **F** for fullscreen.
+
+---
+
 ## Getting Started
 
 ### Option 1: Use Google Colab (Easiest - No Installation!)
@@ -69,12 +84,15 @@ rare_diseases/
 │   ├── fetch_rare_disease_genes.py
 │   └── fetch_ensembl_genes.py
 ├── notebooks/                          # Course notebooks
-│   ├── Rare_Disease_Genes_Class_1.ipynb   # Class 1 (Mar 27)
-│   ├── Rare_Disease_Genes_HW1.ipynb       # Homework 1 (due Apr 3)
-│   ├── Rare_Disease_Genes_Class_2.ipynb   # Class 2 (Apr 3)
-│   ├── Rare_Disease_Genes_HW2.ipynb       # Homework 2 (due Apr 10) — portfolio setup
-│   ├── Rare_Disease_Genes_HW3.ipynb       # Homework 3 (due Apr 24) — visualization
-│   └── learn_data_analysis.ipynb          # Original combined notebook
+│   ├── Rare_Disease_Genes_Class_1.ipynb     # Class 1 (Mar 27)
+│   ├── Rare_Disease_Genes_HW1.ipynb         # Homework 1 (due Apr 3)
+│   ├── Rare_Disease_Genes_Class_2.ipynb     # Class 2 (Apr 3)
+│   ├── Rare_Disease_Genes_HW2.ipynb         # Homework 2 (due Apr 10) — portfolio setup
+│   ├── Rare_Disease_Genes_HW3.ipynb         # Homework 3 (due Apr 24) — visualization
+│   ├── Tissue_Specificity_Examples.ipynb    # Bonus: tissue-specificity scoring
+│   └── learn_data_analysis.ipynb            # Original combined notebook
+├── slides/                             # HTML slide decks (reveal.js)
+│   └── find_tissue_specific_genes.html      # Bonus lesson slides
 ├── index.html                          # GitHub Pages website
 └── README.md
 ```
