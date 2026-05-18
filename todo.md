@@ -15,11 +15,15 @@ rare_diseases/
 │   ├── fetch_rare_disease_genes.py
 │   └── fetch_ensembl_genes.py
 ├── notebooks/                          # Course notebooks
-│   ├── Rare_Disease_Genes_Class_1.ipynb   # Class 1 (Mar 27)
-│   ├── Rare_Disease_Genes_HW1.ipynb       # Homework 1 (due Apr 3)
-│   ├── Rare_Disease_Genes_Class_2.ipynb   # Class 2 (Apr 3)
-│   ├── Rare_Disease_Genes_HW2.ipynb       # Homework 2 (due Apr 10) — portfolio setup
-│   └── learn_data_analysis.ipynb          # Original combined notebook
+│   ├── Rare_Disease_Genes_Class_1.ipynb     # Class 1 (Mar 27)
+│   ├── Rare_Disease_Genes_HW1.ipynb         # Homework 1 (due Apr 3)
+│   ├── Rare_Disease_Genes_Class_2.ipynb     # Class 2 (Apr 3)
+│   ├── Rare_Disease_Genes_HW2.ipynb         # Homework 2 (due Apr 10) — portfolio setup
+│   ├── Rare_Disease_Genes_HW3.ipynb         # Homework 3 (due Apr 24) — visualization
+│   ├── Tissue_Specificity_Examples.ipynb    # Next lesson — tissue-specificity scoring
+│   └── learn_data_analysis.ipynb            # Original combined notebook
+├── slides/                             # HTML slide decks (reveal.js)
+│   └── find_tissue_specific_genes.html      # Next lesson slides
 ├── .claude/agents/
 │   └── notebook-reviewer.md           # Claude agent for reviewing notebooks
 ├── index.html                          # GitHub Pages website
@@ -38,6 +42,8 @@ rare_diseases/
 - [x] Add step-by-step visualization section to HW1
 - [x] Review and fix all notebooks for student clarity and code correctness
 - [x] Add course schedule with Colab links to README
+- [x] Create HW3 visualization notebook
+- [x] **Build next lesson — Finding Tissue-Specific Genes** (slide deck + companion notebook)
 
 ## Data Sources
 
@@ -110,7 +116,7 @@ Each student creates and maintains their own GitHub repo as a portfolio containi
 - [ ] Update HW2 notebook to use template workflow instead of create-from-scratch ⚠️ DO NOT do this until template repo is live on GitHub and tested
 - [ ] Guide: basic git workflow cheat sheet for students
 - [ ] Guide: how to write a results/report section in a notebook
-- [ ] Future project: integrate GTEx gene expression data
+- [x] Future project: integrate GTEx gene expression data — *first pass shipped as the "Finding Tissue-Specific Genes" lesson (May 2026)*
 
 ---
 
@@ -163,3 +169,62 @@ Each student creates and maintains their own GitHub repo as a portfolio containi
 ### No Files Modified
 
 This was a discussion/review session — no code changes were made.
+
+---
+
+## Session Log: May 15–18, 2026
+
+### Built — Next Lesson: Finding Tissue-Specific Genes
+
+A standalone lesson connecting gene-expression biology to computational scoring, designed for high-school students. Positioned to follow the existing notebook track.
+
+**Slide deck:** `slides/find_tissue_specific_genes.html` (21 slides, reveal.js, virtual canvas 1280×860)
+
+Arc of the lesson:
+
+1. **Concept foundation** — same DNA in every cell → different cells turn on different genes (gene expression) → genes build proteins (with central-dogma flow diagram) → real examples (MYH7, INS, HBB, RHO)
+2. **Measurement** — How biologists count RNA: RNA-seq with a 5-stage flow (tissue → extract → fragment → sequence → counts), one-gene strip-plot comparison, heatmap intro using a numbers→painted-table side-by-side
+3. **Tissue framing** — two flavors of experiment (groups vs tissues) → Meet GTEx (linked to gtexportal.org) → tissue fingerprints heatmap with real gene names (MYH7/NEFM/ALB/ACTN3/SFTPC/GAPDH)
+4. **Rare-disease bridge** — "Do rare-disease genes show tissue specificity in normal bodies?" with named examples (MYH7→Heart, DMD→Muscle, HBB→Blood, CFTR→Lung) and the testable hypothesis
+5. **Worked examples** — MYH7 activity slide (observation prompts, no spoiler conclusions), MYH7 box-plot with jittered donor dots, three mini bar/box panels for DMD/INS/HBB
+6. **The big question** — "How do we find them computationally?" → what GTEx actually looks like (3 per-tissue gene × sample tables) → toy practice example with by-eye answers as fragments → 3 small practice datasets (warm-up, swap, tricky multi-tissue) → "describe the steps" prompt
+
+**Companion notebook:** `notebooks/Tissue_Specificity_Examples.ipynb` (30 cells)
+
+Step-by-step Python implementations of three tissue-specificity scoring methods:
+- **fold change** — top tissue ÷ second-highest
+- **ratio to mean** — top tissue ÷ average tissue
+- **tau (τ)** — bounded [0, 1] specificity score
+
+Each method walked through on toy MYH7 (specific) and GAPDH (housekeeping) data with every intermediate value printed. Notebook also covers per-donor → median aggregation (`groupby.median().unstack()`), application to a 6-gene library, and a "your turn" exercise (edit a vector, predict before computing).
+
+### Repo housekeeping
+
+- Two earlier work-in-progress decks (`slides/pca_lesson.html`, `slides/gene_expression_intro.html`) removed from public repo — they need more polish. Files remain on local disk; `.gitignore` updated so they won't be re-staged accidentally.
+- Git history rewritten to consolidate the `datavizpyr` author identity into `Narayanan Raghupathy <narayananr@users.noreply.github.com>` (force-pushed); local git config updated to match so future commits use the right identity.
+- Added Python/Jupyter ignores: `.venv/`, `__pycache__/`, `*.pyc`, `.ipynb_checkpoints/`.
+
+### Files Created
+
+- `slides/find_tissue_specific_genes.html`
+- `notebooks/Tissue_Specificity_Examples.ipynb`
+
+### Files Modified
+
+- `README.md` — added "Next Lesson — Finding Tissue-Specific Genes" section (with GitHub Pages preview link + Colab badge); updated Project Structure tree
+- `.gitignore` — Python/Jupyter ignores + WIP slide decks
+- `todo.md` — this entry
+
+### Commits (current main)
+
+1. `246b64c` — Add lesson slides and tissue specificity notebook
+2. `96d560d` — Remove pca_lesson and gene_expression_intro from public repo
+3. `612e397` — Document tissue-specificity lesson slides and notebook in README
+4. `ffb9422` — Rename "Bonus Lesson" to "Next Lesson" in README
+
+### Open follow-ups
+
+- [ ] Polish and re-publish `pca_lesson.html` (PCA/SVD intro) — currently local-only
+- [ ] Polish and re-publish `gene_expression_intro.html` (longer version with all scoring methods + worked examples) — currently local-only
+- [ ] Decide on a class date for the tissue-specificity lesson and add it to the course schedule
+- [ ] Optional: extend the notebook to load real GTEx median TPM data and apply tau to all ~20,000 genes (currently uses toy values)
